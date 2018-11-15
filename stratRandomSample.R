@@ -8,7 +8,7 @@ stratRandomSample<-function(dataframe,columnName,size){
 
   dataframe<-as.data.frame(dataframe)
   
-  l=length(dataframe[,columnName])
+  l<-length(dataframe[,columnName])
   
   dataframe[,columnName]<-as.factor(dataframe[,columnName])
   

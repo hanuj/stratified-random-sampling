@@ -24,7 +24,7 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   factor_sizes<-data.frame()
   
-  for (i in 1:a_size){
+  for(i in 1:a_size){
     
     factor_sizes[i,"name"]<-a[i]
                               
@@ -32,7 +32,7 @@ stratRandomSample<-function(dataframe,columnName,size){
                             
    }
   
-  for (i in 1:a_size){
+  for(i in 1:a_size){
     
     factor_sizes[i,"relative"]<-round(factor_sizes[i,"num"]/sum(factor_sizes[,"num"]),4)
   
@@ -46,7 +46,7 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   data_out<-data.frame()
   
-  for (i in 1:a_size){
+  for(i in 1:a_size){
     
     b<-sample(x=factor_sizes[i,2],size=factor_sizes[i,2]*size)
          

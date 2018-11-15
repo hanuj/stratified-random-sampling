@@ -1,4 +1,4 @@
-stratRandomSample<-function(dataframe,columnName,size) {
+stratRandomSample<-function(dataframe,columnName,size){
   
         if(size>1) {stop("size has to be less than or equal to 1")}
 

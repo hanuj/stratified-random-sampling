@@ -1,6 +1,6 @@
 stratRandomSample<-function(dataframe,columnName,size){
   
-        if(size>1) {stop("size has to be less than or equal to 1")}
+        if(size>1){stop("size has to be less than or equal to 1")}
 
   dataframe<-as.data.frame(dataframe)
   
@@ -12,7 +12,7 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   a_size<-length(a)
   
-       if(a_size==1) {stop("selected column has only 1 level")}
+       if(a_size==1){stop("selected column has only 1 level")}
   
   factor_sizes<-data.frame()
   

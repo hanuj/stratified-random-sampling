@@ -44,17 +44,18 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   print(factor_sizes)
   
-  data_out<-data.frame() 
+  data_out<-data.frame()
   
-       for (i in 1:a_size){
+  for (i in 1:a_size){
+    
+    b<-sample(x=factor_sizes[i,2],size=factor_sizes[i,2]*size)
          
-         b<-sample(x=factor_sizes[i,2],size=factor_sizes[i,2]*size)
+    c<-dataframe[which(dataframe[,columnName]==factor_sizes[i,1]),]
          
-         c<-dataframe[which(dataframe[,columnName]==factor_sizes[i,1]),]
+    data_out<-rbind(data_out,c[b,])  
          
-         data_out<-rbind(data_out,c[b,])
-         
-         }                         
+   }                            
   
   return(data_out)
+  
 }

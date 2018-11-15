@@ -16,13 +16,13 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   factor_sizes<-data.frame()
   
-       for (i in 1:a_size) {
-                              factor_sizes[i,"name"]<-a[i]
+       for (i in 1:a_size){
+                            factor_sizes[i,"name"]<-a[i]
                               
-                              factor_sizes[i,"num"]<-length(dataframe[which(dataframe[,columnName]==a[i]),columnName])
-                            }
+                            factor_sizes[i,"num"]<-length(dataframe[which(dataframe[,columnName]==a[i]),columnName])
+                           }
   
-       for (i in 1:a_size) {factor_sizes[i,"relative"]<-round(factor_sizes[i,"num"]/sum(factor_sizes[,"num"]),4)}
+       for (i in 1:a_size){factor_sizes[i,"relative"]<-round(factor_sizes[i,"num"]/sum(factor_sizes[,"num"]),4)}
   
   factor_sizes<-factor_sizes[order(factor_sizes[,"num"]),]
   print("Original data")
@@ -30,12 +30,15 @@ stratRandomSample<-function(dataframe,columnName,size){
   
   data_out<-data.frame() 
   
-       for (i in 1:a_size) {
-                             b<-sample(x=factor_sizes[i,2],size=factor_sizes[i,2]*size)
+       for (i in 1:a_size){
          
-                                c<-dataframe[which(dataframe[,columnName]==factor_sizes[i,1]),]
-
-                                   data_out<-rbind(data_out,c[b,])
-       }
+         b<-sample(x=factor_sizes[i,2],size=factor_sizes[i,2]*size)
+         
+         c<-dataframe[which(dataframe[,columnName]==factor_sizes[i,1]),]
+         
+         data_out<-rbind(data_out,c[b,])
+         
+         }                         
+  
   return(data_out)
 }
